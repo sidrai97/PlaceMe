@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PlaceMe</title>
-</head>
-<body>
-    <h1>Placeholder to be removed later</h1>
-</body>
-</html>
+{% extends "base_layout.html" %}
+{% block title %}PlaceMe{% endblock %}
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/homepage.css')}}">
+{% endblock %}
+{% block head_js %}
+{{ super() }}
+<script src="{{url_for('static',filename='js/homepage.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<div>
+<h2>Home page contents here!! NO body,head tags just the stuff that goes inside body like form, h1, li etc...</h2>
+</div>
+
+{% endblock %}

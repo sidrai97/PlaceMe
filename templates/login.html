@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PlaceMe</title>
-</head>
-<body>
-<h1>Placeholder to be removed later</h1>
-</body>
-</html>
+{% extends "base_layout.html" %}
+{% block title %}PlaceMe Login{% endblock %}
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/homepage.css')}}">
+{% endblock %}
+{% block head_js %}
+{{ super() }}
+<script src="{{url_for('static',filename='js/homepage.js')}}"></script>
+{% endblock %}
+{% block body %}
+{{ super() }}
+
+    Applicant's Login
+    <form action="/login" method="post" autocomplete="off">
+        <input type="hidden" name="user-type" value="applicant">
+        <input type="text" id="a_user_id" name="a_user_id" placeholder="User Id">
+        <input type="password" id="a_user_pass" name="a_user_pass" placeholder="Password">
+        <input type="submit" id="a_sub" name="a_sub" value="SUBMIT">
+    </form>
+    <br>
+    Employer's Login
+    <form action="/login" method="post" autocomplete="off">
+        <input type="hidden" name="user-type" value="employer">
+        <input type="text" id="e_user_id" name="e_user_id" placeholder="Employer Id">
+        <input type="password" id="e_user_pass" name="e_user_pass" placeholder="Password">
+        <input type="submit" id="e_sub" name="e_sub" value="SUBMIT">
+    </form>
+
+{% endblock %}
