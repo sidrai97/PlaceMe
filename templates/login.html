@@ -11,17 +11,21 @@
 {% block body %}
 {{ super() }}
 
+    {% if error %}
+    <p><strong>{{ error }}</strong></p>
+    {% endif %}
+
     Applicant's Login
-    <form action="/login" method="post" autocomplete="off">
-        <input type="hidden" name="user-type" value="applicant">
-        <input type="text" id="a_user_id" name="a_user_id" placeholder="User Id">
+    <form action="/login/" method="post" autocomplete="off">
+        <input type="hidden" name="user_type" value="applicant">
+        <input type="text" id="a_user_id" name="a_user_id" placeholder="Username">
         <input type="password" id="a_user_pass" name="a_user_pass" placeholder="Password">
         <input type="submit" id="a_sub" name="a_sub" value="SUBMIT">
     </form>
     <br>
     Employer's Login
-    <form action="/login" method="post" autocomplete="off">
-        <input type="hidden" name="user-type" value="employer">
+    <form action="/login/" method="post" autocomplete="off">
+        <input type="hidden" name="user_type" value="employer">
         <input type="text" id="e_user_id" name="e_user_id" placeholder="Employer Id">
         <input type="password" id="e_user_pass" name="e_user_pass" placeholder="Password">
         <input type="submit" id="e_sub" name="e_sub" value="SUBMIT">
