@@ -1,4 +1,6 @@
 from flask import render_template, session, redirect, request
+# from flask.ext.bcrypt import check_password_hash
+from app_modules.db_connection import *
 
 
 def login():
@@ -11,7 +13,10 @@ def login():
         if user_type == 'applicant':
             user_id = request.form['a_user_id']
             password = request.form['a_user_pass']
-            if user_id == 'sid' and password == 'sid123':
+            # checking if user has an entry in applicants collection
+            res = applicants.find_one({"_id": user_id, "password": password}, {"_id": 1, "password": 1})
+            # print(res)
+            if res is not None:
                 session['username'] = user_id
                 session['user_type'] = user_type
                 return redirect('/dashboard')
@@ -20,7 +25,10 @@ def login():
         elif user_type == 'employer':
             user_id = request.form['e_user_id']
             password = request.form['e_user_pass']
-            if user_id == 'google' and password == 'sid123':
+            # checking if user has an entry in employers collection
+            res = employers.find_one({"_id": user_id, "password": password}, {"_id": 1, "password": 1})
+            # print(res)
+            if res is not None:
                 session['username'] = user_id
                 session['user_type'] = user_type
                 return redirect('/dashboard')
