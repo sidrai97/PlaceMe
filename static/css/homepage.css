@@ -1,4 +1,33 @@
-div{
-    background-color: green;
+.main_cover{
+    background: url("/static/images/place.jpg") no-repeat;
+    background-size: cover;
+    height: 550px;
+    margin-top:-25px
+}
+.main{
+    position: relative;
     text-align: center;
+    top: 220px;
+    color: white;
+}
+.main h1 {
+    font-size: 70px;
+    font-weight: 800;
+    margin-top: 0;
+    color: white;
+}
+.main h2 {
+    font-size: 60px;
+    font-weight: 500;
+    margin-top: 0;
+    color: white;
+}
+.main p {
+    font-size: 45px;
+    color: white;
+}
+.students .companies {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
 }

@@ -12,8 +12,26 @@
 {% block body %}
 {{ super() }}
 
-<div>
-<h2>Home page contents here!! NO body,head tags just the stuff that goes inside body like form, h1, li etc...</h2>
-</div>
+    <div class="main_cover" style="margin-top: 50px;">
+        <div class="main" id="main" align=center>
+            <h1>PlaceMe</h1>
+                <h2>The Uniform Placement Platform</h2>
+                <p>We place you at the right position</p>
+        </div>
+    </div>
 
+<center>
+    <div id="students">
+        <div id="student1"></div>
+        <h2>For Students</h2>
+        <h3>Learn, Get better, Get hired.</h3>
+        We provide a transparent placement opportunity for IT students all over India.
+    </div><hr>
+    <div id="companies">
+        <h2>For Companies</h2>
+        <h3>Screen, Interview and Hire.</h3>
+        We provide a uniform end-to-end facility for hiring IT students in India.
+    </div>
+</center>
+<br>
 {% endblock %}

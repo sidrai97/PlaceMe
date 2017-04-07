@@ -10,6 +10,7 @@ app.secret_key = '12ka442ka1'  # for session handling
 
 # home page
 app.add_url_rule('/', view_func=home, methods=['GET'])
+app.add_url_rule('/home', view_func=home, methods=['GET'])
 
 # login & signup & logout
 app.add_url_rule('/login/', view_func=login, methods=['GET', 'POST'])
